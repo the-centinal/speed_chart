@@ -24,7 +24,7 @@ const plugin = ({ widgets, simulator, vehicle }) => {
            setInterval(function() {
              console.log("inside setinterval")
              
-           var speed = vehicle.Speed;
+           var speed = await vehicle.Speed;
              console.log(speed);
            
             var x_co = [0, 5, 10, 15, 20, 25, 30];
