@@ -1,3 +1,6 @@
+
+
+import loadScript from "./loadscript.js";
 const plugin = ({ widgets, simulator, vehicle }) => {
   
 
@@ -9,20 +12,21 @@ const plugin = ({ widgets, simulator, vehicle }) => {
            const div = document.createElement("div");
 
             div.innerHTML = (`
-             <div class="speed_line"> vehicle Speed</div>
+            <div class="line_speed">Line Chart</div>
+           
               <div class="speed-chart" style="height:280px !important; width: 280px !important;">
-                   <div>
-                    < canvas id="myChart" style="height:280px !important; width: 280px !important;"></canvas>
+                  <div>
+                  <canvas id="myChart" style="height:280px !important; width: 280px !important;"></canvas>
                   </div>
-              </div>
-              `);
+              </div>`);
 
          if(div.querySelectorAll("#myChart").length > 0 ){
            setInterval(function() {
              console.log("inside setinterval")
              
-             var speed = Vehicle.Speed
+           var speed = vehicle.Speed;
              console.log(speed);
+           
             var x_co = [0, 5, 10, 15, 20, 25, 30];
 
             var y_co = [0, 15, 30, 47, 50, 45, 30]
@@ -69,8 +73,6 @@ const plugin = ({ widgets, simulator, vehicle }) => {
             );}, 1000)
          };
          
-
-
 
             box.injectNode(div);
 
